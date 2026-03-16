@@ -4,9 +4,9 @@ import logoImage from '../assets/images/logo.png';
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white relative overflow-hidden" style={{ height: '100vh' }}>
+    <div className="bg-black text-white relative overflow-hidden" style={{ height: '98vh' }}>
       {/* Hero Person Image - Full viewport height, behind everything including navbar */}
-      <div className="absolute top-0 right-0 w-1/2 h-full z-0">
+      <div className="absolute top-0 right-10 w-1/2 h-full z-0">
         <img 
           src={heroImage} 
           alt="Fitness Person" 
@@ -30,7 +30,7 @@ const Hero = () => {
             <img 
               src={logoImage} 
               alt="Fitness Logo" 
-              className="w-20 h-20 lg:w-24 lg:h-24"
+              className="w-20 h-20 lg:w-28 lg:h-28"
             />
             
             <div className="flex flex-col space-y-4">
@@ -42,7 +42,7 @@ const Hero = () => {
                 </span>
               </div>
               
-              <h1 className="font-krona text-4xl lg:text-5xl xl:text-6xl leading-tight tracking-wider">
+              <h1 className="font-krona text-3xl lg:text-4xl xl:text-5xl leading-tight tracking-wider">
                 <span className="text-primary">TRAIN</span> WITH THE
               </h1>
             </div>

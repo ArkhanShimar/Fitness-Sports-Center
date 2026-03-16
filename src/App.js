@@ -13,6 +13,9 @@ function App() {
           <Navbar />
         </div>
       </div>
+      
+      {/* Yellow Divider */}
+      <div className="w-full h-2.5 bg-primary"></div>
     </div>
   );
 }
