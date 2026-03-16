@@ -14,6 +14,7 @@ module.exports = {
       fontFamily: {
         'unbounded': ['Unbounded', 'sans-serif'],
         'koulen': ['Koulen', 'cursive'],
+        'krona': ['Krona One', 'sans-serif'],
         sans: ['Unbounded', 'system-ui', 'sans-serif'],
       },
     },

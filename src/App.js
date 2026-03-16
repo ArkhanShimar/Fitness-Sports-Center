@@ -1,13 +1,17 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      {/* Other sections will be added here */}
-      <div className="pt-20">
-        <h1 className="text-center text-white text-2xl">Fitness Sports Center Coming Soon...</h1>
+      {/* Hero section with full viewport height */}
+      <div className="relative">
+        <Hero />
+        {/* Navbar positioned absolutely over Hero */}
+        <div className="absolute top-0 left-0 right-0 z-50">
+          <Navbar />
+        </div>
       </div>
     </div>
   );

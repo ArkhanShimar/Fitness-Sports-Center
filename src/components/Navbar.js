@@ -7,20 +7,20 @@ const Navbar = () => {
   const navItems = ['HOME', 'ABOUT', 'SERVICES', 'CONTACT'];
 
   return (
-    <nav className="bg-black text-white py-3 px-6 lg:px-16 fixed w-full top-0 z-50">
+    <nav className="bg-transparent text-white py-3 px-6 lg:px-16 fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Text */}
-        <div className="font-unbounded font-semibold text-sm lg:text-base tracking-wide">
+        <div className="font-unbounded text-sm lg:text-base tracking-wide">
           FITNESS <span className="text-primary">SPORTS</span> CENTER
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-10">
+        <div className="hidden lg:flex items-center space-x-8">
           {navItems.map((item) => (
             <div key={item} className="relative">
               <a 
                 href={`#${item.toLowerCase()}`} 
-                className="font-unbounded text-xs font-normal hover:text-primary transition-colors cursor-pointer tracking-wider"
+                className="font-unbounded text-[10px] font-normal hover:text-primary transition-colors cursor-pointer tracking-wider"
                 onClick={() => setActiveSection(item)}
               >
                 {item}
