@@ -36,7 +36,7 @@ const Hero = () => {
             <div className="flex flex-col space-y-3 md:space-y-4">
               {/* Powered by FitLife Fitness - with blurred dot */}
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 md:w-3 md:h-3 bg-primary rounded-full blur-sm"></div>
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-primary rounded-full blur-[2px]"></div>
                 <span className="font-unbounded text-xs md:text-sm text-gray-300">
                   Powered by FitLife Fitness
                 </span>

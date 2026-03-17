@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
+import WhyChooseUs from './components/WhyChooseUs';
 
 function App() {
   return (
@@ -27,6 +28,12 @@ function App() {
       
       {/* Services Section */}
       <Services />
+      
+      {/* Yellow Divider */}
+      <div className="w-full h-2.5 bg-primary"></div>
+      
+      {/* Why Choose Us Section */}
+      <WhyChooseUs />
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
