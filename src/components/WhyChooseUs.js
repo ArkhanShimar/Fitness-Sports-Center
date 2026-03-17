@@ -2,7 +2,7 @@ import whyChooseImage from '../assets/images/why choose.jpg';
 
 const WhyChooseUs = () => {
   return (
-    <section id="whychooseus" className="bg-black text-white py-6 lg:py-8">
+    <section id="whychooseus" className="bg-black text-white py-10 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
           <div>
             {/* Section Title */}
             <div className="mb-6">
-              <h2 className="font-krona text-2xl lg:text-3xl xl:text-4xl leading-tight tracking-wider mb-3">
+              <h2 className="font-krona text-xl lg:text-2xl xl:text-3xl leading-tight tracking-wider mb-3">
                 WHY CHOOSE US
               </h2>
               <div className="w-24 h-0.5 bg-primary"></div>

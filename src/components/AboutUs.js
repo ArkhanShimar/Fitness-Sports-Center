@@ -3,7 +3,7 @@ import aboutTeamImage from '../assets/images/about us team.png';
 
 const AboutUs = () => {
   return (
-    <section id="about" className="bg-black text-white py-8 lg:py-12">
+    <section id="about" className="bg-black text-white py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         
         {/* Top Section - Single Column */}

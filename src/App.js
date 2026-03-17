@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -34,6 +35,12 @@ function App() {
       
       {/* Why Choose Us Section */}
       <WhyChooseUs />
+      
+      {/* Yellow Divider */}
+      <div className="w-full h-2.5 bg-primary"></div>
+      
+      {/* Contact Section */}
+      <Contact />
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>

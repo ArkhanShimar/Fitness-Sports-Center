@@ -3,14 +3,14 @@ import nutritionImage from '../assets/images/Nutrition Guidance.jpg';
 
 const Services = () => {
   return (
-    <section id="services" className="bg-black text-white py-6 lg:py-8">
+    <section id="services" className="bg-black text-white py-10 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         
         {/* Top Section - Title and Description */}
         <div className="mb-6 lg:mb-8">
           {/* Section Title */}
           <div className="mb-4">
-            <h2 className="font-krona text-lg lg:text-xl xl:text-2xl leading-tight tracking-wider mb-2">
+            <h2 className="font-krona text-xl lg:text-2xl xl:text-3xl leading-tight tracking-wider mb-2">
               OUR SERVICE
             </h2>
             <div className="w-16 h-0.5 bg-primary"></div>
