@@ -10,9 +10,35 @@ const Navbar = () => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       setIsScrolled(scrollTop > 50);
+
+      // Get all sections
+      const sections = ['home', 'about', 'services', 'whychooseus', 'contact'];
+      const sectionElements = sections.map(id => document.getElementById(id)).filter(Boolean);
+      
+      // Find which section is currently in view
+      let currentSection = 'HOME';
+      
+      for (let i = sectionElements.length - 1; i >= 0; i--) {
+        const section = sectionElements[i];
+        const rect = section.getBoundingClientRect();
+        
+        // Check if section is in viewport (considering navbar height)
+        if (rect.top <= 100) {
+          currentSection = sections[i].toUpperCase();
+          if (currentSection === 'WHYCHOOSEUS') {
+            currentSection = 'SERVICES'; // Map whychooseus to services for nav
+          }
+          break;
+        }
+      }
+      
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Call once to set initial state
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -20,7 +46,13 @@ const Navbar = () => {
 
   // Handle smooth scroll to section
   const scrollToSection = (sectionName) => {
-    const sectionId = sectionName.toLowerCase();
+    let sectionId = sectionName.toLowerCase();
+    
+    // Handle special case for services (includes why choose us)
+    if (sectionName === 'SERVICES') {
+      sectionId = 'services';
+    }
+    
     const element = document.getElementById(sectionId);
     
     if (element) {
