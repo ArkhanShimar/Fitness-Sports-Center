@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
+import Location from './components/Location';
 
 function App() {
   return (
@@ -41,6 +42,12 @@ function App() {
       
       {/* Contact Section */}
       <Contact />
+      
+      {/* Yellow Divider */}
+      <div className="w-full h-2.5 bg-primary"></div>
+      
+      {/* Location Section */}
+      <Location />
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
