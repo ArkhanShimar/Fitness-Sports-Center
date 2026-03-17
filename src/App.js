@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AboutUs from './components/AboutUs';
 
 function App() {
   return (
@@ -13,6 +14,12 @@ function App() {
           <Navbar />
         </div>
       </div>
+      
+      {/* Yellow Divider */}
+      <div className="w-full h-2.5 bg-primary"></div>
+      
+      {/* About Us Section */}
+      <AboutUs />
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>

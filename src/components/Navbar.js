@@ -39,28 +39,29 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Styled with blurred background */}
         <button 
-          className="lg:hidden"
+          className="lg:hidden relative"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-            <span className="w-full h-0.5 bg-white"></span>
-            <span className="w-full h-0.5 bg-white"></span>
-            <span className="w-full h-0.5 bg-white"></span>
+          <div className="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm rounded-lg"></div>
+          <div className="relative w-8 h-8 flex flex-col justify-center items-center space-y-1 p-1">
+            <span className="w-5 h-0.5 bg-white transition-all"></span>
+            <span className="w-5 h-0.5 bg-white transition-all"></span>
+            <span className="w-5 h-0.5 bg-white transition-all"></span>
           </div>
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Styled with blurred background */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-3 pb-3">
-          <div className="flex flex-col space-y-3">
+        <div className="lg:hidden mt-2 pb-2">
+          <div className="bg-black bg-opacity-50 backdrop-blur-md rounded-lg p-3 space-y-2">
             {navItems.map((item) => (
               <a 
                 key={item}
                 href={`#${item.toLowerCase()}`} 
-                className="font-unbounded text-xs font-normal hover:text-primary transition-colors tracking-wider"
+                className="block font-unbounded text-xs font-normal hover:text-primary transition-colors tracking-wider py-1"
                 onClick={() => {
                   setActiveSection(item);
                   setIsMenuOpen(false);
@@ -69,7 +70,7 @@ const Navbar = () => {
                 {item}
               </a>
             ))}
-            <button className="text-white px-5 py-1.5 rounded-full font-unbounded font-normal text-xs hover:opacity-80 transition-colors w-fit tracking-wide" style={{backgroundColor: '#4E4E4E'}}>
+            <button className="text-white px-3 py-1 rounded-full font-unbounded font-normal text-xs hover:opacity-80 transition-colors w-fit tracking-wide mt-2" style={{backgroundColor: '#4E4E4E'}}>
               JOIN NOW
             </button>
           </div>
