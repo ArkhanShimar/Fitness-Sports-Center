@@ -23,10 +23,10 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-16 relative z-20 h-full">
         
         {/* Content positioned over hero image */}
-        <div className="flex flex-col justify-center h-full pt-16 md:pt-20">
+        <div className="flex flex-col justify-center h-full pt-12 md:pt-16">
           
           {/* Logo and Powered by section - Responsive layout */}
-          <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6 mb-6 md:mb-8">
+          <div className="flex flex-col md:flex-row md:items-start space-y-4 md:space-y-0 md:space-x-6 mb-4 md:mb-6">
             <img 
               src={logoImage} 
               alt="Fitness Logo" 
@@ -43,44 +43,55 @@ const Hero = () => {
               </div>
               
               <h1 className="font-krona text-2xl md:text-3xl lg:text-4xl xl:text-5xl leading-tight tracking-wider">
-                <span className="text-primary">TRAIN</span> WITH THE
+                <span className="text-primary">TRANSFORM</span> YOUR BODY
               </h1>
             </div>
           </div>
 
           {/* BEST COACHES - Responsive sizing */}
-          <div className="mb-8 md:mb-12">
+          <div className="mb-6 md:mb-8">
             <h1 className="font-krona text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight tracking-wider">
-              BEST <span className="text-primary">COACHES</span>
+              ACHIEVE <span className="text-primary">GREATNESS</span>
             </h1>
           </div>
 
-          {/* About Us Button - Responsive sizing */}
-          <div>
-            <button 
-              onClick={() => {
-                const element = document.getElementById('about');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="bg-primary text-black px-4 py-1.5 md:px-6 md:py-2 rounded-full font-unbounded font-semibold text-xs hover:bg-yellow-400 transition-colors flex items-center space-x-2"
-            >
-              <span>About Us</span>
-              <svg 
-                className="w-3 h-3" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
+          {/* Bottom Section - About Us Button and Welcome Message */}
+          <div className="flex flex-col md:flex-row md:items-center md:space-x-20 space-y-4 md:space-y-0">
+            {/* About Us Button - Responsive sizing */}
+            <div>
+              <button 
+                onClick={() => {
+                  const element = document.getElementById('about');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }}
+                className="bg-primary text-black px-4 py-1.5 md:px-6 md:py-2 rounded-full font-unbounded font-semibold text-xs hover:bg-yellow-400 transition-colors flex items-center space-x-2"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7" 
-                />
-              </svg>
-            </button>
+                <span>About Us</span>
+                <svg 
+                  className="w-3 h-3" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5l7 7-7 7" 
+                  />
+                </svg>
+              </button>
+            </div>
+
+            {/* Welcome Message */}
+            <div className="max-w-md">
+              <p className="font-unbounded text-xs md:text-sm text-gray-300 leading-relaxed">
+                Join our community of fitness enthusiasts and start your transformation journey today. 
+                Experience world-class training with expert coaches.
+              </p>
+            </div>
           </div>
         </div>
       </div>
