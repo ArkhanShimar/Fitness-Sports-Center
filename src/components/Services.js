@@ -1,6 +1,9 @@
 import { useTheme } from '../contexts/ThemeContext';
 import gymBgImage from '../assets/images/gym bg in sevices.jpeg';
 import nutritionImage from '../assets/images/Nutrition Guidance.jpg';
+import personalTrainingImage from '../assets/images/Personal Training.webp';
+import strengthImage from '../assets/images/Strength & Cardio Equipment.jpg';
+import groupClassesImage from '../assets/images/Group Classes.webp';
 
 const Services = () => {
   const { isDark } = useTheme();
@@ -45,7 +48,7 @@ const Services = () => {
               isDark ? 'border-gray-700 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'
             }`}>
               <img 
-                src={gymBgImage} 
+                src={personalTrainingImage} 
                 alt="Personal Training" 
                 className="w-full h-full object-cover"
               />
@@ -69,7 +72,7 @@ const Services = () => {
               isDark ? 'border-gray-700 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'
             }`}>
               <img 
-                src={gymBgImage} 
+                src={strengthImage} 
                 alt="Strength & Cardio Equipment" 
                 className="w-full h-full object-cover"
               />
@@ -105,7 +108,7 @@ const Services = () => {
               isDark ? 'border-gray-700 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'
             }`}>
               <img 
-                src={gymBgImage} 
+                src={groupClassesImage} 
                 alt="Group Classes" 
                 className="w-full h-full object-cover"
               />
