@@ -10,7 +10,7 @@ A gym website built for Fitness Sports Center. The site covers everything from s
 
 - Dark and light theme with toggle button in the navbar
 - Smooth scroll animations triggered on scroll (fade, slide-in)
-- Responsive layout — works on mobile, tablet, and desktop
+- Responsive layout - works on mobile, tablet, and desktop
 - Horizontal trainer carousel with auto-play, loop, and drag support
 - Membership plans section with three pricing tiers
 - Contact form with a location map embed
