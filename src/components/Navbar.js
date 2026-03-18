@@ -33,8 +33,10 @@ const Navbar = () => {
             currentSection = 'ABOUT';
           } else if (sectionId === 'services' || sectionId === 'whychooseus') {
             currentSection = 'SERVICES';
-          } else if (sectionId === 'membership' || sectionId === 'trainers') {
+          } else if (sectionId === 'membership') {
             currentSection = 'PLANS';
+          } else if (sectionId === 'trainers') {
+            currentSection = '';
           } else if (sectionId === 'contact') {
             currentSection = 'CONTACT';
           }
