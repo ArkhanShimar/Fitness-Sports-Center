@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
@@ -7,54 +7,71 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
 import Location from './components/Location';
 import Footer from './components/Footer';
+import { setupScrollAnimations } from './utils/scrollAnimations';
 
 function App() {
+  useEffect(() => {
+    // Setup scroll animations only
+    setupScrollAnimations();
+  }, []);
+
   return (
     <div className="App">
-      {/* Hero section with full viewport height */}
-      <div className="relative">
+      {/* Fixed Navbar */}
+      <Navbar />
+      
+      {/* Hero section with scroll animation */}
+      <div className="scroll-animate">
         <Hero />
-        {/* Navbar positioned absolutely over Hero */}
-        <div className="absolute top-0 left-0 right-0 z-50">
-          <Navbar />
-        </div>
       </div>
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
       
       {/* About Us Section */}
-      <AboutUs />
+      <div className="scroll-animate">
+        <AboutUs />
+      </div>
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
       
       {/* Services Section */}
-      <Services />
+      <div className="scroll-animate-left">
+        <Services />
+      </div>
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
       
       {/* Why Choose Us Section */}
-      <WhyChooseUs />
+      <div className="scroll-animate-right">
+        <WhyChooseUs />
+      </div>
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
       
       {/* Contact Section */}
-      <Contact />
+      <div className="scroll-animate">
+        <Contact />
+      </div>
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
       
       {/* Location Section */}
-      <Location />
+      <div className="scroll-animate-left">
+        <Location />
+      </div>
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
       
       {/* Footer */}
-      <Footer />
+      <div className="scroll-animate-fade">
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -95,7 +95,7 @@ const Navbar = () => {
 
         {/* JOIN NOW Button */}
         <div className="hidden lg:block">
-          <button className="text-white px-5 py-1.5 rounded-full font-unbounded font-normal text-xs hover:opacity-80 transition-colors tracking-wide" style={{backgroundColor: '#4E4E4E'}}>
+          <button className="text-white px-5 py-1.5 rounded-full font-unbounded font-normal text-xs hover:opacity-80 hover:scale-105 transform transition-all duration-200 tracking-wide" style={{backgroundColor: '#4E4E4E'}}>
             JOIN NOW
           </button>
         </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import heroImage from '../assets/images/hero.png';
 import logoImage from '../assets/images/logo.png';
 
@@ -36,7 +35,7 @@ const Hero = () => {
             <div className="flex flex-col space-y-3 md:space-y-4">
               {/* Powered by FitLife Fitness - with blurred dot */}
               <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 md:w-3 md:h-3 bg-primary rounded-full blur-[2px]"></div>
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-primary rounded-full blur-sm"></div>
                 <span className="font-unbounded text-xs md:text-sm text-gray-300">
                   Powered by FitLife Fitness
                 </span>
@@ -56,7 +55,7 @@ const Hero = () => {
           </div>
 
           {/* Bottom Section - About Us Button and Welcome Message */}
-          <div className="flex flex-col md:flex-row md:items-center md:space-x-20 space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row md:items-center md:space-x-8 space-y-4 md:space-y-0">
             {/* About Us Button - Responsive sizing */}
             <div>
               <button 
@@ -66,7 +65,7 @@ const Hero = () => {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
-                className="bg-primary text-black px-4 py-1.5 md:px-6 md:py-2 rounded-full font-unbounded font-semibold text-xs hover:bg-yellow-400 transition-colors flex items-center space-x-2"
+                className="bg-primary text-black px-4 py-1.5 md:px-6 md:py-2 rounded-full font-unbounded font-semibold text-xs hover:bg-yellow-400 hover:scale-105 transform transition-all duration-200 flex items-center space-x-2"
               >
                 <span>About Us</span>
                 <svg 
