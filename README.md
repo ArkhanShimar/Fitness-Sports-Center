@@ -1,5 +1,7 @@
 # Fitness Sports Center
 
+**Live site:** [View Live](https://fitlife-fitness-sports-center.vercel.app/)
+
 A gym website built for Fitness Sports Center. The site covers everything from services and membership plans to trainer profiles and a contact form. It's fully responsive and supports both dark and light themes.
 
 ---
