@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,6 +13,8 @@ import Footer from './components/Footer';
 import { setupScrollAnimations } from './utils/scrollAnimations';
 
 function App() {
+  const [showFab, setShowFab] = useState(false);
+
   useEffect(() => {
     // Override browser scroll restoration immediately
     if ('scrollRestoration' in window.history) {
@@ -47,9 +49,13 @@ function App() {
     };
 
     window.addEventListener('pageshow', handlePageShow);
+
+    const handleFabScroll = () => setShowFab(window.scrollY > 300);
+    window.addEventListener('scroll', handleFabScroll);
     
     return () => {
       window.removeEventListener('pageshow', handlePageShow);
+      window.removeEventListener('scroll', handleFabScroll);
     };
   }, []);
 
@@ -128,6 +134,19 @@ function App() {
           <Footer />
         </div>
       </div>
+
+      {/* FAB - Scroll to top */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Scroll to top"
+        className={`fixed bottom-6 right-6 z-50 w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-primary flex items-center justify-center transition-all duration-300 backdrop-blur-md
+          bg-black/30 hover:bg-primary/20 hover:scale-110 shadow-[0_0_16px_rgba(212,188,5,0.25)]
+          ${showFab ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+      >
+        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 15l7-7 7 7" />
+        </svg>
+      </button>
     </ThemeProvider>
   );
 }
