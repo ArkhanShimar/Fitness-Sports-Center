@@ -14,7 +14,7 @@ const Navbar = () => {
       setIsScrolled(scrollTop > 50);
 
       // Get all sections
-      const sections = ['home', 'about', 'services', 'whychooseus', 'contact'];
+      const sections = ['home', 'about', 'services', 'whychooseus', 'membership', 'trainers', 'contact'];
       const sectionElements = sections.map(id => document.getElementById(id)).filter(Boolean);
       
       // Find which section is currently in view
@@ -26,15 +26,15 @@ const Navbar = () => {
         
         // Check if section is in viewport (considering navbar height)
         if (rect.top <= 100) {
-          const sectionId = sections[i];
+          const sectionId = section.id;
           if (sectionId === 'home') {
             currentSection = 'HOME';
           } else if (sectionId === 'about') {
             currentSection = 'ABOUT';
-          } else if (sectionId === 'services') {
+          } else if (sectionId === 'services' || sectionId === 'whychooseus') {
             currentSection = 'SERVICES';
-          } else if (sectionId === 'whychooseus') {
-            currentSection = 'SERVICES'; // Map whychooseus to services for nav
+          } else if (sectionId === 'membership' || sectionId === 'trainers') {
+            currentSection = 'PLANS';
           } else if (sectionId === 'contact') {
             currentSection = 'CONTACT';
           }
@@ -52,7 +52,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['HOME', 'ABOUT', 'SERVICES', 'CONTACT'];
+  const navItems = ['HOME', 'ABOUT', 'SERVICES', 'PLANS', 'CONTACT'];
 
   // Handle smooth scroll to section
   const scrollToSection = (sectionName) => {
@@ -72,6 +72,11 @@ const Navbar = () => {
     // Handle special case for services (includes why choose us)
     if (sectionName === 'SERVICES') {
       sectionId = 'services';
+    }
+    
+    // Plans scrolls to membership section
+    if (sectionName === 'PLANS') {
+      sectionId = 'membership';
     }
     
     // First try to find the section element directly
