@@ -5,6 +5,8 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
+import MembershipPlans from './components/MembershipPlans';
+import Trainers from './components/Trainers';
 import Contact from './components/Contact';
 import Location from './components/Location';
 import Footer from './components/Footer';
@@ -84,6 +86,22 @@ function App() {
         {/* Why Choose Us Section */}
         <div className="scroll-animate-right">
           <WhyChooseUs />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* Membership Plans Section */}
+        <div className="scroll-animate">
+          <MembershipPlans />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* Trainers Section */}
+        <div className="scroll-animate">
+          <Trainers />
         </div>
         
         {/* Yellow Divider */}
