@@ -42,7 +42,7 @@ const Hero = () => {
             <div className="flex flex-col space-y-3 sm:space-y-4 md:space-y-5 flex-1 min-w-0">
               {/* Powered by FitLife Fitness - with blurred dot */}
               <div className="flex items-center space-x-3 sm:space-x-3">
-                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-primary rounded-full blur-sm flex-shrink-0"></div>
+                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-primary rounded-full blur-[2px] flex-shrink-0"></div>
                 <span className={`font-unbounded text-xs sm:text-sm md:text-sm truncate ${
                   isDark ? 'text-gray-300' : 'text-gray-600'
                 }`}>
