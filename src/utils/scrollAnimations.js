@@ -8,7 +8,7 @@ export const initScrollAnimations = () => {
         // Add animation when element comes into view
         entry.target.classList.add('animate-in');
       } else {
-        // Remove animation when element goes out of view
+        // Remove animation when element goes out of view (for repeat animations)
         entry.target.classList.remove('animate-in');
       }
     });
@@ -17,15 +17,22 @@ export const initScrollAnimations = () => {
     rootMargin: '0px 0px -150px 0px' // Trigger when element is 150px into viewport
   });
 
-  // Start observing all animated elements (and keep observing)
+  // Start observing all animated elements
   animatedElements.forEach((element) => {
+    // Check if element is already in viewport on page load
+    const rect = element.getBoundingClientRect();
+    const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+    
+    if (isInViewport) {
+      // If element is in viewport on load (like Hero section), show it immediately
+      element.classList.add('animate-in');
+    }
+    
     observer.observe(element);
   });
 };
 
 export const setupScrollAnimations = () => {
-  // Wait for DOM to be fully loaded and components mounted
-  setTimeout(() => {
-    initScrollAnimations();
-  }, 1000); // 1 second delay to ensure everything is loaded
+  // Initialize immediately without delay
+  initScrollAnimations();
 };

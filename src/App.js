@@ -11,11 +11,43 @@ import { setupScrollAnimations } from './utils/scrollAnimations';
 
 function App() {
   useEffect(() => {
-    // Ensure page starts at top on refresh/load
-    window.scrollTo(0, 0);
-    
-    // Setup scroll animations
+    // Override browser scroll restoration immediately
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Force scroll to top function
+    const forceScrollToTop = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      
+      if (document.scrollingElement) {
+        document.scrollingElement.scrollTop = 0;
+      }
+    };
+
+    // Execute immediately
+    forceScrollToTop();
+
+    // Execute on next frame to override any browser restoration
+    requestAnimationFrame(forceScrollToTop);
+
+    // Setup scroll animations immediately without delay
     setupScrollAnimations();
+
+    // Add minimal cleanup for browser navigation
+    const handlePageShow = (event) => {
+      if (event.persisted) {
+        forceScrollToTop();
+      }
+    };
+
+    window.addEventListener('pageshow', handlePageShow);
+    
+    return () => {
+      window.removeEventListener('pageshow', handlePageShow);
+    };
   }, []);
 
   return (

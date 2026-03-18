@@ -3,7 +3,7 @@ import logoImage from '../assets/images/logo.png';
 
 const Hero = () => {
   return (
-    <div id="home" className="bg-black text-white relative overflow-hidden h-[70vh] md:h-[85vh] lg:h-[95vh] min-h-screen">
+    <div id="home" className="bg-black text-white relative overflow-hidden h-[70vh] md:h-[85vh] lg:h-[95vh]">
       {/* Hero Person Image - Full viewport height, behind everything including navbar */}
       <div className="absolute top-0 right-0 w-full md:w-3/5 lg:w-1/2 h-full z-0">
         <img 

@@ -61,6 +61,7 @@ const Navbar = () => {
         behavior: 'smooth'
       });
       setActiveSection(sectionName);
+      setIsMenuOpen(false); // Close mobile menu if open
       return;
     }
     
@@ -121,6 +122,7 @@ const Navbar = () => {
       });
       
       setActiveSection(sectionName);
+      setIsMenuOpen(false); // Close mobile menu if open
     } else {
       console.error(`Section ${sectionId} not found`);
     }
