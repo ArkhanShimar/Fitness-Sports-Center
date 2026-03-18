@@ -6,6 +6,7 @@ import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
 import Contact from './components/Contact';
 import Location from './components/Location';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
       
       {/* Yellow Divider */}
       <div className="w-full h-2.5 bg-primary"></div>
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
