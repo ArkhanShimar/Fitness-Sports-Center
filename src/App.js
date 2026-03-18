@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
@@ -51,63 +52,65 @@ function App() {
   }, []);
 
   return (
-    <div className="App container-safe">
-      {/* Fixed Navbar */}
-      <Navbar />
-      
-      {/* Hero section with scroll animation */}
-      <div className="scroll-animate">
-        <Hero />
+    <ThemeProvider>
+      <div className="App container-safe">
+        {/* Fixed Navbar */}
+        <Navbar />
+        
+        {/* Hero section with scroll animation */}
+        <div className="scroll-animate">
+          <Hero />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* About Us Section */}
+        <div className="scroll-animate">
+          <AboutUs />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* Services Section */}
+        <div className="scroll-animate-left">
+          <Services />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* Why Choose Us Section */}
+        <div className="scroll-animate-right">
+          <WhyChooseUs />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* Contact Section */}
+        <div className="scroll-animate">
+          <Contact />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* Location Section */}
+        <div className="scroll-animate-left">
+          <Location />
+        </div>
+        
+        {/* Yellow Divider */}
+        <div className="w-full h-2.5 bg-primary"></div>
+        
+        {/* Footer */}
+        <div className="scroll-animate-fade">
+          <Footer />
+        </div>
       </div>
-      
-      {/* Yellow Divider */}
-      <div className="w-full h-2.5 bg-primary"></div>
-      
-      {/* About Us Section */}
-      <div className="scroll-animate">
-        <AboutUs />
-      </div>
-      
-      {/* Yellow Divider */}
-      <div className="w-full h-2.5 bg-primary"></div>
-      
-      {/* Services Section */}
-      <div className="scroll-animate-left">
-        <Services />
-      </div>
-      
-      {/* Yellow Divider */}
-      <div className="w-full h-2.5 bg-primary"></div>
-      
-      {/* Why Choose Us Section */}
-      <div className="scroll-animate-right">
-        <WhyChooseUs />
-      </div>
-      
-      {/* Yellow Divider */}
-      <div className="w-full h-2.5 bg-primary"></div>
-      
-      {/* Contact Section */}
-      <div className="scroll-animate">
-        <Contact />
-      </div>
-      
-      {/* Yellow Divider */}
-      <div className="w-full h-2.5 bg-primary"></div>
-      
-      {/* Location Section */}
-      <div className="scroll-animate-left">
-        <Location />
-      </div>
-      
-      {/* Yellow Divider */}
-      <div className="w-full h-2.5 bg-primary"></div>
-      
-      {/* Footer */}
-      <div className="scroll-animate-fade">
-        <Footer />
-      </div>
-    </div>
+    </ThemeProvider>
   );
 }
 

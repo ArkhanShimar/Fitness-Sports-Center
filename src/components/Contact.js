@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 import contactImage from '../assets/images/contact form img.png';
 
 const Contact = () => {
+  const { isDark } = useTheme();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -74,7 +76,9 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-black text-white pt-8 sm:pt-10 md:pt-16 lg:pt-20 pb-0 relative overflow-hidden">
+    <section id="contact" className={`pt-8 sm:pt-10 md:pt-16 lg:pt-20 pb-0 relative overflow-hidden ${
+      isDark ? 'bg-black text-white' : 'bg-white text-black'
+    }`}>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 relative z-10">
         
@@ -92,7 +96,9 @@ const Contact = () => {
 
           {/* Description */}
           <div className="mb-6 sm:mb-8">
-            <p className="font-unbounded text-xs sm:text-sm text-white leading-relaxed">
+            <p className={`font-unbounded text-xs sm:text-sm leading-relaxed ${
+              isDark ? 'text-white' : 'text-black'
+            }`}>
               Have a question or need assistance? Reach out to us via email, phone, or the contact form below. We're eager to assist you.
             </p>
           </div>
@@ -114,7 +120,9 @@ const Contact = () => {
 
             {/* Description - positioned over image */}
             <div className="relative z-20 mb-6 sm:mb-8">
-              <p className="font-unbounded text-xs sm:text-sm lg:text-base text-white leading-relaxed max-w-lg">
+              <p className={`font-unbounded text-xs sm:text-sm lg:text-base leading-relaxed max-w-lg ${
+                isDark ? 'text-white' : 'text-black'
+              }`}>
                 Have a question or need assistance? Reach out to us via email, phone, or the contact form below. We're eager to assist you.
               </p>
             </div>
@@ -148,7 +156,9 @@ const Contact = () => {
               
               {/* Full Name Field */}
               <div>
-                <label className="block font-krona text-xs sm:text-sm text-white mb-2 tracking-wider">
+                <label className={`block font-krona text-xs sm:text-sm mb-2 tracking-wider ${
+                  isDark ? 'text-white' : 'text-black'
+                }`}>
                   FULL NAME:
                 </label>
                 <input
@@ -156,7 +166,9 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-2 border-primary rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors font-unbounded text-xs sm:text-sm"
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-2 border-primary rounded-full placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors font-unbounded text-xs sm:text-sm ${
+                    isDark ? 'text-white placeholder-gray-400' : 'text-black placeholder-gray-500'
+                  }`}
                   placeholder="Enter your full name"
                 />
                 {errors.name && (
@@ -166,7 +178,9 @@ const Contact = () => {
 
               {/* Email Field */}
               <div>
-                <label className="block font-krona text-xs sm:text-sm text-white mb-2 tracking-wider">
+                <label className={`block font-krona text-xs sm:text-sm mb-2 tracking-wider ${
+                  isDark ? 'text-white' : 'text-black'
+                }`}>
                   EMAIL:
                 </label>
                 <input
@@ -174,7 +188,9 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-2 border-primary rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors font-unbounded text-xs sm:text-sm"
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-2 border-primary rounded-full focus:outline-none focus:border-yellow-400 transition-colors font-unbounded text-xs sm:text-sm ${
+                    isDark ? 'text-white placeholder-gray-400' : 'text-black placeholder-gray-500'
+                  }`}
                   placeholder="Enter your email address"
                 />
                 {errors.email && (
@@ -184,7 +200,9 @@ const Contact = () => {
 
               {/* Message Field */}
               <div>
-                <label className="block font-krona text-xs sm:text-sm text-white mb-2 tracking-wider">
+                <label className={`block font-krona text-xs sm:text-sm mb-2 tracking-wider ${
+                  isDark ? 'text-white' : 'text-black'
+                }`}>
                   MESSAGE:
                 </label>
                 <textarea
@@ -192,7 +210,9 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-2 border-primary rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400 transition-colors font-unbounded text-xs sm:text-sm resize-none"
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border-2 border-primary rounded-2xl focus:outline-none focus:border-yellow-400 transition-colors font-unbounded text-xs sm:text-sm resize-none ${
+                    isDark ? 'text-white placeholder-gray-400' : 'text-black placeholder-gray-500'
+                  }`}
                   placeholder="Enter your message"
                 />
                 {errors.message && (

@@ -1,6 +1,12 @@
+import { useTheme } from '../contexts/ThemeContext';
+
 const Location = () => {
+  const { isDark } = useTheme();
+  
   return (
-    <section id="location" className="bg-black text-white py-8 sm:py-10 md:py-16 lg:py-20">
+    <section id="location" className={`py-8 sm:py-10 md:py-16 lg:py-20 ${
+      isDark ? 'bg-black text-white' : 'bg-white text-black'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Content */}
@@ -21,7 +27,9 @@ const Location = () => {
             </h3>
 
             {/* Subheading */}
-            <h4 className="font-krona text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight tracking-wider text-white mb-6 sm:mb-8">
+            <h4 className={`font-krona text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight tracking-wider mb-6 sm:mb-8 ${
+              isDark ? 'text-white' : 'text-black'
+            }`}>
               With Results <br></br>That Go the Distance
             </h4>
 
@@ -41,10 +49,14 @@ const Location = () => {
 
             {/* Opening Hours */}
             <div className="space-y-2 sm:space-y-3">
-              <h5 className="font-krona text-xs sm:text-sm lg:text-base text-white tracking-wider mb-2 sm:mb-3">
+              <h5 className={`font-krona text-xs sm:text-sm lg:text-base tracking-wider mb-2 sm:mb-3 ${
+                isDark ? 'text-white' : 'text-black'
+              }`}>
                 OPENING HOURS:
               </h5>
-              <div className="space-y-1.5 sm:space-y-2 font-unbounded text-[10px] sm:text-xs lg:text-xs text-gray-300">
+              <div className={`space-y-1.5 sm:space-y-2 font-unbounded text-[10px] sm:text-xs lg:text-xs ${
+                isDark ? 'text-gray-300' : 'text-gray-600'
+              }`}>
                 <div className="flex justify-between">
                   <span>Monday - Friday:</span>
                   <span>5:00 AM - 11:00 PM</span>

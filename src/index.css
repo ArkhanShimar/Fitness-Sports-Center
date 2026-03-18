@@ -14,11 +14,22 @@
 
 html, body {
   font-family: 'Unbounded', sans-serif;
-  background-color: #000000;
-  color: #ffffff;
   overflow-x: hidden; /* Prevent horizontal scroll */
   width: 100%;
   max-width: 100vw;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme (default) */
+body.dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Light theme */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Ensure all elements respect viewport width */

@@ -1,11 +1,18 @@
 import heroImage from '../assets/images/hero.png';
 import logoImage from '../assets/images/logo.png';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Hero = () => {
+  const { isDark } = useTheme();
+  
   return (
-    <div id="home" className="bg-black text-white relative overflow-hidden h-[85vh] sm:h-[90vh] md:h-[90vh] lg:h-[95vh] w-full max-w-full">
+    <div id="home" className={`relative overflow-hidden h-[85vh] sm:h-[90vh] md:h-[90vh] lg:h-[95vh] w-full max-w-full ${
+      isDark ? 'bg-black text-white' : 'bg-white text-black'
+    }`}>
       {/* Hero Person Image - Full viewport height, behind everything including navbar */}
-      <div className="absolute top-0 right-0 w-full sm:w-4/5 md:w-3/5 lg:w-1/2 h-full z-0 max-w-full">
+      <div className={`absolute top-0 right-0 w-full sm:w-4/5 md:w-3/5 lg:w-1/2 h-full z-0 max-w-full transition-opacity duration-300 ${
+        isDark ? 'opacity-100' : 'opacity-40'
+      }`}>
         <img 
           src={heroImage} 
           alt="Fitness Person" 
@@ -36,7 +43,9 @@ const Hero = () => {
               {/* Powered by FitLife Fitness - with blurred dot */}
               <div className="flex items-center space-x-3 sm:space-x-3">
                 <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-primary rounded-full blur-sm flex-shrink-0"></div>
-                <span className="font-unbounded text-xs sm:text-sm md:text-sm text-gray-300 truncate">
+                <span className={`font-unbounded text-xs sm:text-sm md:text-sm truncate ${
+                  isDark ? 'text-gray-300' : 'text-gray-600'
+                }`}>
                   Powered by FitLife Fitness
                 </span>
               </div>
@@ -97,7 +106,9 @@ const Hero = () => {
 
             {/* Welcome Message */}
             <div className="max-w-sm sm:max-w-md md:max-w-lg flex-1 min-w-0">
-              <p className="font-unbounded text-xs sm:text-sm md:text-sm text-gray-300 leading-relaxed break-words">
+              <p className={`font-unbounded text-xs sm:text-sm md:text-sm leading-relaxed break-words ${
+                isDark ? 'text-gray-300' : 'text-gray-600'
+              }`}>
                 Join our community of fitness enthusiasts and start your transformation journey today. 
                 Experience world-class training with expert coaches.
               </p>

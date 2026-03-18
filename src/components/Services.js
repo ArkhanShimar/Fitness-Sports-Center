@@ -1,9 +1,14 @@
+import { useTheme } from '../contexts/ThemeContext';
 import gymBgImage from '../assets/images/gym bg in sevices.jpeg';
 import nutritionImage from '../assets/images/Nutrition Guidance.jpg';
 
 const Services = () => {
+  const { isDark } = useTheme();
+  
   return (
-    <section id="services" className="bg-black text-white py-8 sm:py-10 md:py-12 lg:py-16">
+    <section id="services" className={`py-8 sm:py-10 md:py-12 lg:py-16 ${
+      isDark ? 'bg-black text-white' : 'bg-white text-black'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         
         {/* Top Section - Title and Description */}
@@ -22,7 +27,9 @@ const Services = () => {
           </h3>
 
           {/* Description */}
-          <p className="font-unbounded text-[10px] sm:text-xs lg:text-sm text-gray-300 leading-relaxed max-w-5xl">
+          <p className={`font-unbounded text-[10px] sm:text-xs lg:text-sm leading-relaxed max-w-5xl ${
+            isDark ? 'text-gray-300' : 'text-gray-600'
+          }`}>
             At FITNESS SPORTS CENTER, we provide a full range of fitness services designed to help you achieve your goals. From personal training 
             sessions to group classes, our expert trainers guide you every step of the way. With modern equipment, nutrition guidance, and supportive 
             programs, we make sure every workout counts and every member feels empowered.
@@ -34,13 +41,15 @@ const Services = () => {
           
           {/* Personal Training */}
           <div className="relative group cursor-pointer">
-            <div className="relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-gray-500 transition-colors">
+            <div className={`relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 transition-colors ${
+              isDark ? 'border-gray-700 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'
+            }`}>
               <img 
                 src={gymBgImage} 
                 alt="Personal Training" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+              <div className={`absolute inset-0 ${isDark ? 'bg-black bg-opacity-60' : 'bg-white bg-opacity-30'}`}></div>
               <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3">
                 <h4 className="font-krona text-xs sm:text-sm lg:text-base text-primary mb-1 sm:mb-2 tracking-wider">
                   Personal Training
@@ -56,13 +65,15 @@ const Services = () => {
 
           {/* Strength & Cardio Equipment */}
           <div className="relative group cursor-pointer">
-            <div className="relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-gray-500 transition-colors">
+            <div className={`relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 transition-colors ${
+              isDark ? 'border-gray-700 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'
+            }`}>
               <img 
                 src={gymBgImage} 
                 alt="Strength & Cardio Equipment" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+              <div className={`absolute inset-0 ${isDark ? 'bg-black bg-opacity-60' : 'bg-white bg-opacity-30'}`}></div>
               <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3">
                 <h4 className="font-krona text-xs sm:text-sm lg:text-base text-primary mb-1 sm:mb-2 tracking-wider">
                   Strength & Cardio Equipment
@@ -84,19 +95,21 @@ const Services = () => {
                 alt="Gym Equipment" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+              <div className={`absolute inset-0 ${isDark ? 'bg-black bg-opacity-30' : 'bg-white bg-opacity-20'}`}></div>
             </div>
           </div>
 
           {/* Group Classes */}
           <div className="relative group cursor-pointer">
-            <div className="relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-gray-500 transition-colors">
+            <div className={`relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 transition-colors ${
+              isDark ? 'border-gray-700 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'
+            }`}>
               <img 
                 src={gymBgImage} 
                 alt="Group Classes" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+              <div className={`absolute inset-0 ${isDark ? 'bg-black bg-opacity-60' : 'bg-white bg-opacity-30'}`}></div>
               <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3">
                 <h4 className="font-krona text-xs sm:text-sm lg:text-base text-primary mb-1 sm:mb-2 tracking-wider">
                   Group Classes
@@ -112,13 +125,15 @@ const Services = () => {
 
           {/* Nutrition & Recipes */}
           <div className="relative group cursor-pointer">
-            <div className="relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 border-gray-700 hover:border-gray-500 transition-colors">
+            <div className={`relative h-28 sm:h-32 lg:h-36 rounded-2xl overflow-hidden border-2 transition-colors ${
+              isDark ? 'border-gray-700 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'
+            }`}>
               <img 
                 src={nutritionImage} 
                 alt="Nutrition Guidance" 
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+              <div className={`absolute inset-0 ${isDark ? 'bg-black bg-opacity-40' : 'bg-white bg-opacity-25'}`}></div>
               <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3">
                 <h4 className="font-krona text-xs sm:text-sm lg:text-base text-primary mb-1 sm:mb-2 tracking-wider">
                   Nutrition & Recipes

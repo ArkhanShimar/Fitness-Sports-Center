@@ -1,8 +1,13 @@
+import { useTheme } from '../contexts/ThemeContext';
 import whyChooseImage from '../assets/images/why choose.jpg';
 
 const WhyChooseUs = () => {
+  const { isDark } = useTheme();
+  
   return (
-    <section id="whychooseus" className="bg-black text-white py-8 sm:py-10 md:py-16 lg:py-20">
+    <section id="whychooseus" className={`py-8 sm:py-10 md:py-16 lg:py-20 ${
+      isDark ? 'bg-black text-white' : 'bg-white text-black'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
@@ -29,10 +34,14 @@ const WhyChooseUs = () => {
               <div className="flex items-start space-x-3 sm:space-x-4">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-1.5 sm:mt-2 flex-shrink-0 shadow-[0_0_8px_#D4BC05]"></div>
                 <div>
-                  <h4 className="font-unbounded text-xs sm:text-sm lg:text-base text-white mb-1 tracking-wider">
+                  <h4 className={`font-unbounded text-xs sm:text-sm lg:text-base mb-1 tracking-wider ${
+                    isDark ? 'text-white' : 'text-black'
+                  }`}>
                     Expert Trainers
                   </h4>
-                  <p className="font-unbounded text-[10px] sm:text-xs text-gray-300 leading-relaxed">
+                  <p className={`font-unbounded text-[10px] sm:text-xs leading-relaxed ${
+                    isDark ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     Our certified trainers guide every member with personalized programs to help you achieve your 
                     fitness goals safely and effectively.
                   </p>
@@ -43,10 +52,14 @@ const WhyChooseUs = () => {
               <div className="flex items-start space-x-3 sm:space-x-4">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-1.5 sm:mt-2 flex-shrink-0 shadow-[0_0_8px_#D4BC05]"></div>
                 <div>
-                  <h4 className="font-unbounded text-xs sm:text-sm lg:text-base text-white mb-1 tracking-wider">
+                  <h4 className={`font-unbounded text-xs sm:text-sm lg:text-base mb-1 tracking-wider ${
+                    isDark ? 'text-white' : 'text-black'
+                  }`}>
                     Modern Facilities
                   </h4>
-                  <p className="font-unbounded text-[10px] sm:text-xs text-gray-300 leading-relaxed">
+                  <p className={`font-unbounded text-[10px] sm:text-xs leading-relaxed ${
+                    isDark ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     Fitness sports center is equipped with state-of-the-art machines, functional training areas, and dedicated 
                     spaces for group classes to enhance your workout experience.
                   </p>
@@ -57,10 +70,14 @@ const WhyChooseUs = () => {
               <div className="flex items-start space-x-3 sm:space-x-4">
                 <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full mt-1.5 sm:mt-2 flex-shrink-0 shadow-[0_0_8px_#D4BC05]"></div>
                 <div>
-                  <h4 className="font-unbounded text-xs sm:text-sm lg:text-base text-white mb-1 tracking-wider">
+                  <h4 className={`font-unbounded text-xs sm:text-sm lg:text-base mb-1 tracking-wider ${
+                    isDark ? 'text-white' : 'text-black'
+                  }`}>
                     Supportive Community
                   </h4>
-                  <p className="font-unbounded text-[10px] sm:text-xs text-gray-300 leading-relaxed">
+                  <p className={`font-unbounded text-[10px] sm:text-xs leading-relaxed ${
+                    isDark ? 'text-gray-300' : 'text-gray-600'
+                  }`}>
                     Join a motivating and friendly environment where members encourage each other, making your fitness 
                     journey more enjoyable and consistent.
                   </p>
@@ -81,7 +98,7 @@ const WhyChooseUs = () => {
                 alt="Why Choose Us - Fitness Training" 
                 className="w-full h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+              <div className={`absolute inset-0 bg-opacity-20 ${isDark ? 'bg-black' : 'bg-white'}`}></div>
             </div>
           </div>
         </div>
