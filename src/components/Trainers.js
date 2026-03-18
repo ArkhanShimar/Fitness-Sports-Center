@@ -179,7 +179,6 @@ const Trainers = () => {
           onTransitionEnd={handleTransitionEnd}
         >
           {looped.map((trainer, i) => {
-            const realIndex = i % TOTAL;
             const isActive = i === current;
             return (
               <TrainerCard
