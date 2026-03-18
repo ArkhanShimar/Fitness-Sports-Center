@@ -24,9 +24,17 @@ const Navbar = () => {
         
         // Check if section is in viewport (considering navbar height)
         if (rect.top <= 100) {
-          currentSection = sections[i].toUpperCase();
-          if (currentSection === 'WHYCHOOSEUS') {
+          const sectionId = sections[i];
+          if (sectionId === 'home') {
+            currentSection = 'HOME';
+          } else if (sectionId === 'about') {
+            currentSection = 'ABOUT';
+          } else if (sectionId === 'services') {
+            currentSection = 'SERVICES';
+          } else if (sectionId === 'whychooseus') {
             currentSection = 'SERVICES'; // Map whychooseus to services for nav
+          } else if (sectionId === 'contact') {
+            currentSection = 'CONTACT';
           }
           break;
         }
@@ -46,6 +54,16 @@ const Navbar = () => {
 
   // Handle smooth scroll to section
   const scrollToSection = (sectionName) => {
+    // Special case for HOME - always scroll to top
+    if (sectionName === 'HOME') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      setActiveSection(sectionName);
+      return;
+    }
+    
     let sectionId = sectionName.toLowerCase();
     
     // Handle special case for services (includes why choose us)
@@ -53,14 +71,58 @@ const Navbar = () => {
       sectionId = 'services';
     }
     
-    const element = document.getElementById(sectionId);
+    // First try to find the section element directly
+    let element = document.getElementById(sectionId);
+    
+    // If not found, look for it inside animation wrappers
+    if (!element) {
+      const wrappers = document.querySelectorAll('[class*="scroll-animate"]');
+      for (const wrapper of wrappers) {
+        const sectionInside = wrapper.querySelector(`#${sectionId}`);
+        if (sectionInside) {
+          element = sectionInside;
+          break;
+        }
+      }
+    }
     
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      // Get navbar height to offset scroll position
+      const navbar = document.querySelector('nav');
+      const navbarHeight = navbar ? navbar.offsetHeight : 80; // fallback to 80px
+      
+      // Get the wrapper element for consistent positioning
+      const wrapper = element.closest('[class*="scroll-animate"]') || element;
+      const elementPosition = wrapper.offsetTop;
+      
+      // For all sections, find the yellow divider above it and scroll just below it
+      let offsetPosition;
+      
+      // Find the yellow divider before the section wrapper
+      const yellowDivider = wrapper.previousElementSibling;
+      
+      if (yellowDivider && yellowDivider.classList.contains('bg-primary')) {
+        // Use offsetTop for consistent positioning
+        const dividerPosition = yellowDivider.offsetTop;
+        const dividerHeight = yellowDivider.offsetHeight;
+        offsetPosition = dividerPosition + dividerHeight - navbarHeight + 5; // 5px below divider
+      } else {
+        // Fallback to regular calculation if no yellow divider found
+        let fallbackOffset = 20;
+        if (sectionName === 'SERVICES') {
+          fallbackOffset = 25;
+        }
+        offsetPosition = elementPosition - navbarHeight - fallbackOffset;
+      }
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
+      
       setActiveSection(sectionName);
+    } else {
+      console.error(`Section ${sectionId} not found`);
     }
   };
 

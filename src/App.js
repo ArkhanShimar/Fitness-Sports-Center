@@ -11,7 +11,10 @@ import { setupScrollAnimations } from './utils/scrollAnimations';
 
 function App() {
   useEffect(() => {
-    // Setup scroll animations only
+    // Ensure page starts at top on refresh/load
+    window.scrollTo(0, 0);
+    
+    // Setup scroll animations
     setupScrollAnimations();
   }, []);
 

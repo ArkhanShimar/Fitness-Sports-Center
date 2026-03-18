@@ -3,7 +3,7 @@ import logoImage from '../assets/images/logo.png';
 
 const Hero = () => {
   return (
-    <div id="home" className="bg-black text-white relative overflow-hidden h-[70vh] md:h-[85vh] lg:h-[95vh]">
+    <div id="home" className="bg-black text-white relative overflow-hidden h-[70vh] md:h-[85vh] lg:h-[95vh] min-h-screen">
       {/* Hero Person Image - Full viewport height, behind everything including navbar */}
       <div className="absolute top-0 right-0 w-full md:w-3/5 lg:w-1/2 h-full z-0">
         <img 
@@ -62,7 +62,18 @@ const Hero = () => {
                 onClick={() => {
                   const element = document.getElementById('about');
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Get navbar height to offset scroll position
+                    const navbar = document.querySelector('nav');
+                    const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                    
+                    // Calculate position accounting for navbar
+                    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                    const offsetPosition = elementPosition - navbarHeight - 20;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
                   }
                 }}
                 className="bg-primary text-black px-4 py-1.5 md:px-6 md:py-2 rounded-full font-unbounded font-semibold text-xs hover:bg-yellow-400 hover:scale-105 transform transition-all duration-200 flex items-center space-x-2"

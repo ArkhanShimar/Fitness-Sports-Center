@@ -3,7 +3,7 @@ import nutritionImage from '../assets/images/Nutrition Guidance.jpg';
 
 const Services = () => {
   return (
-    <section id="services" className="bg-black text-white py-10 lg:py-20">
+    <section id="services" className="bg-black text-white py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
         
         {/* Top Section - Title and Description */}
